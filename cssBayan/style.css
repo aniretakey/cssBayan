@@ -152,11 +152,10 @@ img {
 
     .meme-input:hover ~ .meme-img>img {
         transition: max-height 0.5s ease-in-out;
-        /* animation: ; */
     }
 
     .meme-input:hover ~ .meme-img {
         display: block;
         opacity: 0.6;
     }
-    }
+}
