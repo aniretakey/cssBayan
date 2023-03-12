@@ -8,6 +8,7 @@ body {
 }
 
 /* Header */
+
 .header {
     display: block;
     padding: 0 3vh 0 1vh;
@@ -62,11 +63,6 @@ body {
     color: black;
 }
 
-.meme-input:checked ~ .cross {
-    transform: rotate(45deg);
-    transition: transform 0.3s ease-in, opacity 0.2s;
-}
-
 img {
     display: block;
     margin-left: auto;
@@ -89,21 +85,38 @@ img {
     transition: all 0.4s;
 }
 
-@media (min-width: 320px) {
+.meme-img {
+    display: block;
+    transform: scale(0);
+    width: 0;
+    transition: width 0.7s;
+}
+
+.meme-input:checked ~ .meme-img {
+    transform: scale(1);
+    width: 100%;
+    transition: transform 0.8s ease-out;
+}
+
+@media (min-width: 310px) {
     body{
         max-width: 80%;
         margin: 5vh auto;
     }
 
     .meme-title{
-        font-size: 0.8rem;
+        font-size: 1rem;
         display: block;
         color: rgb(95, 148, 197);
         cursor: pointer;
     }
+
+    .cross {
+        font-size: 0.8rem;
+    }
 }
 
-@media (min-width: 820px) {
+@media (min-width: 810px) {
     .logo {
         font-size: 3rem;;
     }
@@ -119,7 +132,7 @@ img {
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1910px) {
     body {
         max-width: 60%;
         margin: 0 auto;
@@ -141,16 +154,11 @@ img {
         margin: -1vh 1vh;
         font-size: 2rem;
     }
+}
 
-    .meme-input:hover ~ .meme-title {
-        color: black;
-    }
+    /* Hover */
 
-    .meme-input:checked ~ .meme-title>.cross {
-        transform: rotate(90deg);
-        transition: all 0.4s;
-    }
-
+@media (hover:hover){
     .meme-input:hover ~ .meme-title>.cross {
         transform: rotate(90deg);
         transition: all 0.4s;
@@ -163,5 +171,15 @@ img {
     .meme-input:hover ~ .meme-img {
         display: block;
         opacity: 0.6;
+    }
+
+    .meme-input:hover ~ .meme-title {
+        color: black;
+    }
+
+    .meme-input:hover ~ .meme-img {
+        transform: scale(1);
+        width: 100%;
+        transition: transform 0.8s ease-out;
     }
 }
